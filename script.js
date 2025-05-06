@@ -43,4 +43,6 @@ function generatePassword(event) {
   ).innerText = `Generated Password: ${password}`;
 }
 
-/* Add settings.json for cSpell configuration */
+/* Add settings.json for cSpell configuration 
+Changed var to const for better practice and changed var to parseInt for better practice
+*/
