@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Calculation and Password Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+    <h1>Pizza Calculation and Password Creator</h1>
+    <h2>Pizza Calculation</h2>
+    <form id="pizza-form">
+        <label for="diameter">Diameter of the pizza (in inches):</label>
+        <input type="number" id="diameter" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <div id="pizza-result"></div>
+    <h2>Password Creator</h2>
+    <form id="password-form">
+        <label for="length">Password Length:</label>
+        <input type="number" id="length" required>
+        <button type="submit" onclick="generatePassword(event)">Generate Password</button>
+        </form> 
+    <div id="password-result"></div>
+    <script>
+        // Pizza Calculation
+        document.getElementById('pizza-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const diameter = parseFloat(document.getElementById('diameter').value);
+            const radius = diameter / 2;
+            const area = Math.PI * Math.pow(radius, 2);
+            const cost = area * 0.05; // Assuming $0.05 per square inch
+            document.getElementById('pizza-result').innerText = `Area: ${area.toFixed(2)} square inches, Cost: $${cost.toFixed(2)}`;
+        });
+    </script>
+</body>
+</html>
