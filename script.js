@@ -1,3 +1,7 @@
+window.onload = function () {
+  alert("Welcome to the Pizza Diameter Calculator and Password Creator!");
+};
+
 // Function to generate a unique UUID password
 function generateUUIDPassword() {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
@@ -102,11 +106,11 @@ document
   });
   
 // Add A Secondary Input Later On To Show The Cost Of The Inch Of Pizza
-// Create a log section for square inches and cost
+/* Create a log section for square inches and cost
 const logSection = document.createElement("div");
 logSection.id = "pizza-log";
 logSection.style.marginTop = "20px";
-logSection.innerHTML = "<h3>Pizza Calculation Log</h3><ul id='log-list'></ul>";
+logSection.innerHTML = "<h3>Pizza Calculation Log (Unusable)</h3><ul id='log-list'></ul>";
 document.body.appendChild(logSection);
 
 // Update the pizza calculation to log results
@@ -133,7 +137,7 @@ document.getElementById("pizza-form").addEventListener("submit", function (event
     2
   )} square inches, Cost: $${cost.toFixed(2)}`;
   logList.appendChild(logItem);
-});
+}); */
 // Prevent user from entering negative numbers in the diameter input
 document.getElementById("diameter").addEventListener("input", function () {
   if (parseFloat(this.value) < 0) {
