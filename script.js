@@ -112,4 +112,11 @@ document.getElementById("pizza-form").addEventListener("submit", function (event
   )} square inches, Cost: $${cost.toFixed(2)}`;
   logList.appendChild(logItem);
 });
+// Prevent user from entering negative numbers in the diameter input
+document.getElementById("diameter").addEventListener("input", function () {
+  if (parseFloat(this.value) < 0) {
+    alert("Please enter a positive number for the diameter.");
+    this.value = "";
+  }
+});
 // Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)
