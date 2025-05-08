@@ -64,9 +64,11 @@ const passwordLogSection = document.createElement("div");
 passwordLogSection.id = "password-log";
 passwordLogSection.style.marginTop = "20px";
 const instructionText = document.createElement("p");
-instructionText.innerText = "Or you can copy 1 of our premade passwords already!";
+instructionText.innerText =
+  "Or you can copy 1 of our premade passwords already!";
 passwordLogSection.appendChild(instructionText);
-passwordLogSection.innerHTML = "<h3>Password Log</h3><ul id='password-log-list'></ul>";
+passwordLogSection.innerHTML =
+  "<h3>Password Log</h3><ul id='password-log-list'></ul>";
 document.body.appendChild(passwordLogSection);
 
 function logGeneratedPassword(password) {
@@ -91,9 +93,7 @@ document
   .getElementById("pizza-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
-    const diameter = parseFloat(
-      document.getElementById("diameter").value
-    );
+    const diameter = parseFloat(document.getElementById("diameter").value);
     if (diameter <= 0) {
       alert("Please enter a positive number for the diameter.");
       return;
@@ -101,13 +101,11 @@ document
     const radius = diameter / 2;
     const area = Math.PI * Math.pow(radius, 2);
     const cost = area * 0.05; // Assuming $0.05 per square inch (I'm Not a math wiz, i am not afraid to admit i needed help with this)
-    document.getElementById(
-      "pizza-result"
-    ).innerText = `Area: ${area.toFixed(
+    document.getElementById("pizza-result").innerText = `Area: ${area.toFixed(
       2
     )} square inches, Cost: $${cost.toFixed(2)}`;
   });
-  
+
 // Add A Secondary Input Later On To Show The Cost Of The Inch Of Pizza
 /* Create a log section for square inches and cost
 const logSection = document.createElement("div");
@@ -149,28 +147,30 @@ document.getElementById("diameter").addEventListener("input", function () {
   }
 });
 // Remove duplicate event listener for pizza-form submission
-document.getElementById("pizza-form").addEventListener("submit", function (event) {
-  event.preventDefault();
-  const diameter = parseFloat(document.getElementById("diameter").value);
-  if (diameter <= 0) {
-    alert("Please enter a positive number for the diameter.");
-    return;
-  }
-  const radius = diameter / 2;
-  const area = Math.PI * Math.pow(radius, 2);
-  const cost = area * 0.05; // Assuming $0.05 per square inch
+document
+  .getElementById("pizza-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const diameter = parseFloat(document.getElementById("diameter").value);
+    if (diameter <= 0) {
+      alert("Please enter a positive number for the diameter.");
+      return;
+    }
+    const radius = diameter / 2;
+    const area = Math.PI * Math.pow(radius, 2);
+    const cost = area * 0.05; // Assuming $0.05 per square inch
 
-  // Display the result
-  document.getElementById("pizza-result").innerText = `Area: ${area.toFixed(
-    2
-  )} square inches, Cost: $${cost.toFixed(2)}`;
+    // Display the result
+    document.getElementById("pizza-result").innerText = `Area: ${area.toFixed(
+      2
+    )} square inches, Cost: $${cost.toFixed(2)}`;
 
-  // Log the result
-  const logList = document.getElementById("log-list");
-  const logItem = document.createElement("li");
-  logItem.innerText = `Diameter: ${diameter} inches, Area: ${area.toFixed(
-    2
-  )} square inches, Cost: $${cost.toFixed(2)}`;
-  logList.appendChild(logItem);
-});
+    // Log the result
+    const logList = document.getElementById("log-list");
+    const logItem = document.createElement("li");
+    logItem.innerText = `Diameter: ${diameter} inches, Area: ${area.toFixed(
+      2
+    )} square inches, Cost: $${cost.toFixed(2)}`;
+    logList.appendChild(logItem);
+  });
 // Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)

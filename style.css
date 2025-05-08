@@ -50,7 +50,11 @@ body {
   margin: 0;
 }
 
-h1, h2, p, form, footer {
+h1,
+h2,
+p,
+form,
+footer {
   text-align: center;
 }
 
