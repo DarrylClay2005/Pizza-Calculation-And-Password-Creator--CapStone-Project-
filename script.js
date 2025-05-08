@@ -42,6 +42,12 @@ function generatePassword(event) {
     "password-result"
   ).innerText = `Generated Password: ${password}`;
 }
+document.getElementById("length").addEventListener("input", function () {
+  if (parseInt(this.value) > 10) {
+    alert("Please enter a number less than or equal to 10.");
+    this.value = "";
+  }
+});
 // Prompt user to enter a number if the field is left blank
 document.getElementById("length").addEventListener("blur", function () {
   if (!this.value) {
