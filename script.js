@@ -42,7 +42,12 @@ function generatePassword(event) {
     "password-result"
   ).innerText = `Generated Password: ${password}`;
 }
-
+// Prompt user to enter a number if the field is left blank
+document.getElementById("length").addEventListener("blur", function () {
+  if (!this.value) {
+    alert("Please enter a number for the password length.");
+  }
+});
 /* Add settings.json for cSpell configuration 
 Changed var to const for better practice and changed var to parseInt for better practice
 */
@@ -63,5 +68,6 @@ document
       2
     )} square inches, Cost: $${cost.toFixed(2)}`;
   });
+  
 // Add A Secondary Input Later On To Show The Cost Of The Inch Of Pizza
 // Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)
