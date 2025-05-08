@@ -63,6 +63,9 @@ document.getElementById("length").addEventListener("blur", function () {
 const passwordLogSection = document.createElement("div");
 passwordLogSection.id = "password-log";
 passwordLogSection.style.marginTop = "20px";
+const instructionText = document.createElement("p");
+instructionText.innerText = "Or you can copy 1 of our premade passwords already!";
+passwordLogSection.appendChild(instructionText);
 passwordLogSection.innerHTML = "<h3>Password Log</h3><ul id='password-log-list'></ul>";
 document.body.appendChild(passwordLogSection);
 
