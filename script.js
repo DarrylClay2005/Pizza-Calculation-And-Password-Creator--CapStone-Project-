@@ -59,6 +59,10 @@ document
     const diameter = parseFloat(
       document.getElementById("diameter").value
     );
+    if (diameter <= 0) {
+      alert("Please enter a positive number for the diameter.");
+      return;
+    }
     const radius = diameter / 2;
     const area = Math.PI * Math.pow(radius, 2);
     const cost = area * 0.05; // Assuming $0.05 per square inch (I'm Not a math wiz, i am not afraid to admit i needed help with this)
