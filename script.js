@@ -192,3 +192,35 @@ audioElement.type = "audio/mpeg";
 audioSection.appendChild(audioElement);
 
 document.body.appendChild(audioSection);
+
+// Add like and dislike buttons for the audio
+const likeDislikeSection = document.createElement("div");
+likeDislikeSection.id = "like-dislike-section";
+likeDislikeSection.style.marginTop = "10px";
+
+const likeButton = document.createElement("button");
+likeButton.innerText = "👍 Like";
+likeButton.style.marginRight = "10px";
+
+const dislikeButton = document.createElement("button");
+dislikeButton.innerText = "👎 Dislike";
+
+const feedbackMessage = document.createElement("p");
+feedbackMessage.id = "feedback-message";
+feedbackMessage.style.marginTop = "10px";
+
+likeButton.addEventListener("click", function () {
+  feedbackMessage.innerText = "You liked the song!";
+  feedbackMessage.style.color = "green";
+});
+
+dislikeButton.addEventListener("click", function () {
+  feedbackMessage.innerText = "You disliked the song.";
+  feedbackMessage.style.color = "red";
+});
+
+likeDislikeSection.appendChild(likeButton);
+likeDislikeSection.appendChild(dislikeButton);
+likeDislikeSection.appendChild(feedbackMessage);
+
+audioSection.appendChild(likeDislikeSection);
