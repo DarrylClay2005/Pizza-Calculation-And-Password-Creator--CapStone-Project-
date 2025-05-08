@@ -205,4 +205,4 @@ backgroundAudio.autoplay = true; // Automatically play the audio
 backgroundAudio.style.display = "none"; // Hide the audio element
 document.body.appendChild(backgroundAudio);
 
-// This part was looked up on with youtube because i wanted to add a little bit of fun to the page, i know its not the best but i thought it was a good idea to add some music to the page
+// The Audio Part was looked up on with youtube because i wanted to add a little bit of fun to the page, i know its not the best but i thought it was a good idea to add some music to the page
