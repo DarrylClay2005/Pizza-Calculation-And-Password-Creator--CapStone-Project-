@@ -1,5 +1,25 @@
 window.onload = function () {
-  alert("Welcome to the Pizza Diameter Calculator and Password Creator!");
+  alert("Welcome to the Pizza Diameter Calculator and Password Creator!, We Have Music Playing In The Background,Please Allow Permissions If you want to hear it!, If You Want To Mute It, Just Mute Your Device! Or Click The Mute Button!"); // Alert the user when the page loads
+  // Add a button to mute the music
+  const muteButton = document.createElement("button");
+  muteButton.innerText = "Mute Music";
+  muteButton.style.position = "fixed";
+  muteButton.style.top = "10px";
+  muteButton.style.right = "10px";
+  muteButton.style.zIndex = "1000"; // Ensure the button is on top of other elements
+  document.body.appendChild(muteButton);
+
+  // Mute the background music when the button is clicked
+  muteButton.addEventListener("click", function () {
+    const audio = document.querySelector("audio");
+    if (audio) {
+      audio.muted = !audio.muted; // Toggle mute
+      muteButton.innerText = audio.muted ? "Unmute Music" : "Mute Music"; // Change button text based on mute state
+    }
+  });
+  // Add a button to copy the password to the clipboard
+  const copyButton = document.createElement("button");
+  copyButton.innerText = "Copy Password";
 };
 
 // Function to generate a unique UUID password
@@ -176,51 +196,13 @@ document
 // Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)
 
 
-// Add audio controls for the Wii Shop Channel Main Theme
-const audioSection = document.createElement("div");
-audioSection.id = "audio-section";
-audioSection.style.marginTop = "20px";
+// Add Wii Shop Channel Main Theme as background music
+const backgroundAudio = document.createElement("audio");
+backgroundAudio.src = "Wii Shop Channel Main Theme (HQ).mp3"; // Ensure the file is in the correct directory
+backgroundAudio.type = "audio/mpeg";
+backgroundAudio.loop = true; // Loop the audio
+backgroundAudio.autoplay = true; // Automatically play the audio
+backgroundAudio.style.display = "none"; // Hide the audio element
+document.body.appendChild(backgroundAudio);
 
-const audioTitle = document.createElement("h3");
-audioTitle.innerText = "Enjoy Some Music!";
-audioSection.appendChild(audioTitle);
-
-const audioElement = document.createElement("audio");
-audioElement.controls = true;
-audioElement.src = "Wii Shop Channel Main Theme (HQ).mp3"; // Ensure the file is in the correct directory
-audioElement.type = "audio/mpeg";
-audioSection.appendChild(audioElement);
-
-document.body.appendChild(audioSection);
-
-// Add like and dislike buttons for the audio
-const likeDislikeSection = document.createElement("div");
-likeDislikeSection.id = "like-dislike-section";
-likeDislikeSection.style.marginTop = "10px";
-
-const likeButton = document.createElement("button");
-likeButton.innerText = "👍 Like";
-likeButton.style.marginRight = "10px";
-
-const dislikeButton = document.createElement("button");
-dislikeButton.innerText = "👎 Dislike";
-
-const feedbackMessage = document.createElement("p");
-feedbackMessage.id = "feedback-message";
-feedbackMessage.style.marginTop = "10px";
-
-likeButton.addEventListener("click", function () {
-  feedbackMessage.innerText = "You liked the song!";
-  feedbackMessage.style.color = "green";
-});
-
-dislikeButton.addEventListener("click", function () {
-  feedbackMessage.innerText = "You disliked the song.";
-  feedbackMessage.style.color = "red";
-});
-
-likeDislikeSection.appendChild(likeButton);
-likeDislikeSection.appendChild(dislikeButton);
-likeDislikeSection.appendChild(feedbackMessage);
-
-audioSection.appendChild(likeDislikeSection);
+// This part was looked up on with youtube because i wanted to add a little bit of fun to the page, i know its not the best but i thought it was a good idea to add some music to the page
