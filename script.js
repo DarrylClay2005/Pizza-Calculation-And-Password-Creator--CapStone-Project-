@@ -8,7 +8,8 @@ window.onload = function () {
   muteButton.style.right = "10px";
   muteButton.style.zIndex = "1000"; // Ensure the button is on top of other elements
   document.body.appendChild(muteButton);
-
+  muteButton.style.left = "50%";
+  muteButton.style.transform = "translateX(-50%)";
   // Mute the background music when the button is clicked
   muteButton.addEventListener("click", function () {
     const audio = document.querySelector("audio");
