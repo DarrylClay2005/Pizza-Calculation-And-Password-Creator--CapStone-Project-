@@ -18,6 +18,16 @@ window.onload = function () {
       muteButton.innerText = audio.muted ? "Unmute Music" : "Mute Music"; // Change button text based on mute state
     }
   });
+  // Prompt user to allow audio and reload the page if denied
+  if (!backgroundAudio.autoplay) {
+    const allowAudio = confirm(
+      "Audio playback is disabled. Would you like to enable it? The page will reload if you choose 'OK'."
+    );
+    if (allowAudio) {
+      location.reload();
+    }
+  }
+
   // Add a button to copy the password to the clipboard
   const copyButton = document.createElement("button");
   copyButton.innerText = "Copy Password";
