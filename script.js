@@ -46,3 +46,22 @@ function generatePassword(event) {
 /* Add settings.json for cSpell configuration 
 Changed var to const for better practice and changed var to parseInt for better practice
 */
+// Pizza Calculation
+document
+  .getElementById("pizza-form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    const diameter = parseFloat(
+      document.getElementById("diameter").value
+    );
+    const radius = diameter / 2;
+    const area = Math.PI * Math.pow(radius, 2);
+    const cost = area * 0.05; // Assuming $0.05 per square inch (I'm Not a math wiz, i am not afraid to admit i needed help with this)
+    document.getElementById(
+      "pizza-result"
+    ).innerText = `Area: ${area.toFixed(
+      2
+    )} square inches, Cost: $${cost.toFixed(2)}`;
+  });
+// Add A Secondary Input Later On To Show The Cost Of The Inch Of Pizza
+// Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)
