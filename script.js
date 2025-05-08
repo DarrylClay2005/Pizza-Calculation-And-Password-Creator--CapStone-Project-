@@ -174,3 +174,21 @@ document
     logList.appendChild(logItem);
   });
 // Hey 👋, Little Note under this, i am terrible at math so with this part i had to get my friend to help me with this (i know im old enough to be able to do this quickly, i hate math)
+
+
+// Add audio controls for the Wii Shop Channel Main Theme
+const audioSection = document.createElement("div");
+audioSection.id = "audio-section";
+audioSection.style.marginTop = "20px";
+
+const audioTitle = document.createElement("h3");
+audioTitle.innerText = "Enjoy Some Music!";
+audioSection.appendChild(audioTitle);
+
+const audioElement = document.createElement("audio");
+audioElement.controls = true;
+audioElement.src = "Wii Shop Channel Main Theme (HQ).mp3"; // Ensure the file is in the correct directory
+audioElement.type = "audio/mpeg";
+audioSection.appendChild(audioElement);
+
+document.body.appendChild(audioSection);
